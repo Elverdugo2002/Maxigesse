@@ -1,0 +1,236 @@
+Accueil_admin:
+    name:"accueil admin"
+    MDFloatLayout:
+        Image:
+            source:"image/image login.jpg"
+            pos_hint:{"center_x":.5,"center_y":.5}
+            size_hint:5,5
+            #width:"700 dp"
+            #height:"700 dp"
+        Image:
+            source:"image/logo dark.png"
+            pos_hint:{"center_x":.5,"center_y":.8}
+            #size_hint:5,5
+            #width:"700 dp"
+            #height:"700 dp"
+        Carousel:
+            id: carousel
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                Image:
+                    source:"image/logo.png"
+
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.35,"center_y":.75}
+                Image:
+                    source:"image/logo lcde.png"
+
+
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                Image:
+                    source:"image/logo congo.jpg"
+
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                Image:
+                    source:"image/logo t 2.png"
+
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                md_bg_color:"blue"
+                Image:
+                    source:"image/SLIDE-call-center.jpg"
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                md_bg_color:"blue"
+                Image:
+                    source:"image/E2C-Transformation-digitale.jpg"
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                md_bg_color:"blue"
+                Image:
+                    source:"image/E2C-vous-ecoute.jpg"
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                md_bg_color:"lightblue"
+                Image:
+                    source:"image/lcde.jpg"
+            MDCard:
+                orientation:"vertical"
+                size_hint:.85,.2
+                pos_hint:{"center_x":.38,"center_y":.75}
+                md_bg_color:"lightblue"
+                Image:
+                    source:"image/logo lcd 2.webp"
+        MDBoxLayout:
+            orientation:"vertical"
+            size_hint:.8,.4
+            pos_hint:{"center_x":.5,"center_y":.6}
+            radius:[10]
+
+            MDLabel:
+                text:"Vos actions"
+                font_name:"MPoppins"
+                font_size:'30 dp'
+                pos_hint:{"center_x":.5,"center_y":.8}
+                color:"white"
+
+        MDCard:
+            orientation:"vertical"
+            size_hint:.9,.4
+            pos_hint:{"center_x":.5,"center_y":.35}
+            md_bg_color:"#07C0D9"
+            elevation:5
+
+    #===============================================Gestion des clients==================================================
+        MDCard:
+            orientation:"vertical"
+            md_bg_color:'blue'
+            size_hint:.37,.15
+            pos_hint:{"center_x":.25,"center_y":.45}
+            Image:
+                source:"image/personnes.png"
+
+        MDFlatButton:
+            text:"Gestion des clients"
+            theme_text_color: "Custom"
+            text_color: 'white'
+            size_hint:.37,.15
+            pos_hint:{"center_x":.25,"center_y":.45}
+            radius:[10]
+            on_release:
+                root.manager.transition.direction = "up"
+                root.manager.current = "gestion client"
+
+    #==========================================Gestion des societe============================================================
+        MDCard:
+            md_bg_color:'#279B27'
+            orientation:"vertical"
+            size_hint:.37,.15
+            pos_hint:{"center_x":.7,"center_y":.45}
+            Image:
+                source:'image/societe.png'
+
+        MDFlatButton:
+            text:"Gestion des societés"
+            theme_text_color:"Custom"
+            text_color:"white"
+            size_hint:.37,.15
+            pos_hint:{"center_x":.7,"center_y":.45}
+            #md_bg_color:"lightblue"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "gestion societe"
+    #==========================================Gestion des factures============================================================
+        MDCard:
+            orientation:"vertical"
+            size_hint:.37,.15
+            pos_hint:{"center_x":.7,"center_y":.25}
+            md_bg_color:"#D03241"
+            Image:
+                source : "image/facture.png"
+
+        MDFlatButton:
+            text:"Gestion des factures"
+            theme_text_color:"Custom"
+            text_color:'white'
+            size_hint:.37,.15
+            pos_hint:{"center_x":.7,"center_y":.25}
+            #md_bg_color:"lightblue"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "gestion facture"
+
+
+    #====================================Gestion des paiement================================================
+        MDCard:
+            orientation:"vertical"
+            size_hint:.37,.15
+            pos_hint:{"center_x":.25,"center_y":.25}
+            md_bg_color:"#CCFF33"
+            Image:
+                source: "image/paiement.png"
+
+        MDFlatButton:
+            text:"Gestion des paiements"
+            theme_text_color:"Custom"
+            text_color:"black"
+            size_hint:.37,.15
+            pos_hint:{"center_x":.25,"center_y":.25}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "gestion paiement"
+
+
+
+   #================================== MDTopAppBar:============================================
+    MDFloatLayout:
+        orientation:"vertical"
+        md_bg_color:"#BDEE42"
+        size_hint:1,.1
+        pos_hint:{"top":1}
+        MDLabel:
+            text:"Mr L'administrateur "
+            font_name:"Time"
+            font_size:'20 dp'
+            pos_hint:{"center_x":.53,"center_y":.8}
+            color:"white"
+        MDLabel:
+            id:nom
+            text:"...."
+            font_name:"Time"
+            font_size:'20 dp'
+            pos_hint:{"center_x":.95,"center_y":.8}
+            color:"white"
+
+
+#=================================================MDBottomNavigation===========================
+    MDBoxLayout:
+        size_hint:1,.1
+        md_bg_color:"white"
+        radius:[10,10,0,0]
+        MDBoxLayout:
+            orientation:'vertical'
+            #md_bg_color:'red'
+            MDIconButton:
+                icon:"home"
+                theme_icon_color:'Custom'
+                icon_color:'blue'
+                pos_hint:{"center_x":.5,"center_y":.5}
+                on_release:
+                    root.manager.transition.direction = "up"
+                    root.manager.current = "accueil admin"
+            MDLabel:
+                text:"Accueil"
+                color:'blue'
+                valign:'center'
+                halign:"center"
+        MDBoxLayout:
+            orientation:'vertical'
+            MDIconButton:
+                icon:"account"
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "profile admin"
+                pos_hint:{"center_x":.5,"center_y":.5}
+            MDLabel:
+                text:"Profile"
+                valign:'center'
+                halign:"center"

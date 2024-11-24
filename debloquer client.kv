@@ -1,0 +1,112 @@
+bloque_client
+<bloque_client>:
+    name: 'debloquez client'
+
+
+    MDFloatLayout:
+        canvas.before:
+            Color:
+                rgba: app.theme_cls.primary_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        MDFloatLayout:
+            Image:
+                source:"image/image login.jpg"
+                pos_hint:{"center_x":.5,"center_y":.5}
+                size_hint:5,5
+                #width:"700 dp"
+                #height:"700 dp"
+            Image:
+                source:"image/logo dark.png"
+                pos_hint:{"center_x":.5,"center_y":.8}
+                #size_hint:5,5
+                #width:"700 dp"
+                #height:"700 dp"
+
+
+        MDFloatLayout:
+            orientation: 'vertical'
+            size_hint:.92, 0.56
+            pos_hint: {'center_x': 0.5, 'center_y': 0.44}
+            md_bg_color:'white'
+            elevation: 5
+            radius: [2]  # Rounded corners
+
+            MDTextField:
+                id: nom_client
+                size_hint:None,None
+                width:50
+                pos_hint: {'center_x': 0.5, 'center_y':.9}
+                hint_text: "Nom du client à debloquer"
+                icon_right: "file-document-outline"
+                mode: "rectangle"
+                size_hint_x: .9
+                required: True
+                line_color_focus: 'yellow'  # Focus color
+                line_color_normal: "blue" # Normal color
+                readonly:True
+                on_focus: if self.focus: root.show_menu_bloquer()
+
+            MDRaisedButton:
+                text: "Valider"
+                size_hint_x: 1
+                pos_hint: {'center_x': 0.5, 'center_y':.07}
+                height: "40dp"  # Hauteur réduite pour s'adapter à l'écran
+                font_size:"22sp"
+                md_bg_color: 'blue'
+                text_color:'white'
+                font_name:"MPoppins"
+                on_release:
+                    root.deblocage_client()
+
+        MDFloatLayout:
+            orientation:'vertical'
+            size_hint_y:.1
+            pos_hint:{"top":1}
+            md_bg_color:'blue'
+            MDLabel:
+                text:"Debloqué un Client"
+                pos_hint:{'center_x':.6,"center_y":.5}
+                color: "white"
+                font_size:35
+                font_name:"MPoppins"
+            MDIconButton:
+                icon:"arrow-left"
+                pos_hint:{"center_y":.5}
+                on_release:
+                    root.manager.transition.direction = "up"
+                    root.manager.current = "gestion client"
+    MDBoxLayout:
+        size_hint:1,.1
+        md_bg_color:"white"
+        radius:[10,10,0,0]
+        MDBoxLayout:
+            orientation:'vertical'
+            #md_bg_color:'red'
+            MDIconButton:
+                icon:"home"
+                theme_icon_color:'Custom'
+                icon_color:'blue'
+                pos_hint:{"center_x":.5,"center_y":.5}
+                on_release:
+                    root.manager.transition.direction = "up"
+                    root.manager.current = "accueil admin"
+            MDLabel:
+                text:"Accueil"
+                color:'blue'
+                valign:'center'
+                halign:"center"
+        MDBoxLayout:
+            orientation:'vertical'
+            MDIconButton:
+                icon:"account"
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "profile admin"
+                pos_hint:{"center_x":.5,"center_y":.5}
+            MDLabel:
+                text:"Profile"
+                valign:'center'
+                halign:"center"
+

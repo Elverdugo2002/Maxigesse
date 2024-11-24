@@ -1,0 +1,27 @@
+MDScreen:
+    name:"home"
+    MDFloatLayout:
+        Image:
+            source:'image/popa.jpg'
+            pos_hint:{"center_x":.5,"center_y":.75}
+            size_hint:4,5
+        MDRaisedButton:
+            text:"Créer un Compte"
+            md_bg_color:'navy'
+            text_color:'yellow'
+            pos_hint:{"center_x":.5,"center_y":.5}
+            size_hint_x:.7
+            elevation:2
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = 'inscription'
+        MDRaisedButton:
+            text:"Se connecter"
+            md_bg_color:'navy'
+            text_color:'yellow'
+            pos_hint:{"center_x":.5,"center_y":.4}
+            size_hint_x:.7
+            elevation:2
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = 'connexion'

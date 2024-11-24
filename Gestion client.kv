@@ -1,0 +1,72 @@
+gestion_client
+<gestion_client>:
+    name:"gestion client"
+    MDFloatLayout:
+        Image:
+            source:"image/image login.jpg"
+            pos_hint:{"center_x":.5,"center_y":.5}
+            size_hint:5,5
+            #width:"700 dp"
+            #height:"700 dp"
+        Image:
+            source:"image/logo dark.png"
+            pos_hint:{"center_x":.5,"center_y":.8}
+            #size_hint:5,5
+            #width:"700 dp"
+            #height:"700 dp"
+    MDFloatLayout:
+        orientation:'vertical'
+        size_hint_y:.1
+        pos_hint:{"top":1}
+        md_bg_color:'blue'
+        MDLabel:
+            text:"Gestion des Clients"
+            pos_hint:{'center_x':.6,"center_y":.5}
+            color: "white"
+            font_size:35
+            font_name:"MPoppins"
+        MDIconButton:
+            icon:"arrow-left"
+            pos_hint:{"center_y":.5}
+
+            on_release:
+                root.manager.transition.direction = "up"
+                root.manager.current = "accueil admin"
+    MDFloatLayout:
+        size_hint:.9,.3
+        pos_hint:{"center_x":.5,"center_y":.1}
+        MDRaisedButton:
+            text:"Bloquez un Client "
+            halign:"center"
+            text_color:"blue"
+            size_hint:.9,.3
+            pos_hint:{"center_x":.5,"center_y":.8}
+            elevation: 3
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "bloquez client"
+
+        MDRaisedButton:
+            text:"Débloqué un Client "
+            size_hint:.9,.3
+            pos_hint:{"center_x":.5,"center_y":.4}
+            halign:"center"
+            text_color:"blue"
+            raduis:[20]
+            elevation: 3
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "debloquez client"
+
+    MDTextField:
+        id: recherche
+        hint_text: "Rechercher un client"
+        pos_hint: {"center_x": .5, "center_y": .85}
+        size_hint_x: .9
+        icon_right: "magnify"
+        hint_text_color_normal: 1, 1, 1, 1  # Texte du hint en blanc
+        hint_text_color_focus: "white"  # Texte du hint en blanc
+        icon_right_color_normal: 1, 1, 1, 1  # Couleur de l'icône en blanc
+        text_color_normal: 'yellow'  # Texte du hint en blanc
+        line_color_focus: (0, 0.7, 0.8, 1)  # Même couleur de focus
+        line_color_normal: (0.8, 0.8, 0.8, 1)  # Même couleur normale

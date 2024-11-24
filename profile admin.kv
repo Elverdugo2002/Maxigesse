@@ -1,0 +1,123 @@
+ChangeProfile_admin
+<ChangeProfile_admin>:
+    name: "profile admin"
+    MDFloatLayout:
+        md_bg_color:"#16DDF2"
+
+        MDFloatLayout:
+            orientation:'vertical'
+            size_hint_y:.1
+            pos_hint:{"top":1}
+            md_bg_color:'#D8E806'
+            MDLabel:
+                text:"Mon Profile"
+                pos_hint:{'center_x':.8,"center_y":.5}
+                font_size:35
+                font_name:"MPoppins"
+            MDIconButton:
+                icon:"arrow-left"
+                pos_hint:{"center_y":.5}
+                on_release:
+                    root.manager.transition.direction = "up"
+                    root.manager.current = "accueil admin"
+
+        MDBoxLayout:
+            size_hint_y:.4
+            pos_hint:{"center_x":.5,"center_y":.70}
+            md_bg_color:"#3D07A9"
+        MDFloatLayout:
+            size_hint:.8,.2
+            pos_hint:{"center_x":.7,"center_y":.8}
+
+            MDLabel:
+                id:noms
+                text: "XXXXXXXX"
+                bold:True
+                font_size:30
+                font_name:"MPoppins"
+                size_hint:.8,.2
+                pos_hint:{"center_x":.5,"center_y":.7}
+                color:"white"
+            MDLabel:
+                id:phones
+                text: "XXXXXXX"
+                bold:True
+                font_size:20
+                font_name:"MPoppins"
+                pos_hint:{"center_x":.5,"center_y":.5}
+                size_hint:.5,.2
+                color:"white"
+
+
+
+        MDFloatLayout:
+            size_hint_y:.6
+            pos_hint:{"center_x":.5,"center_y":.4}
+
+
+            MDList:
+                pos_hint:{"center_x":.5,"center_y":.5}
+                font_size:28
+                md_bg_color:'#16DDF2'
+                radius:[35]
+
+                OneLineAvatarIconListItem:
+                    text: "Mon Compte"
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = "compte admin"
+                    iconRight:"account"
+                    IconLeftWidget:
+                        icon: "account"
+                    IconRightWidget:
+                        icon: "chevron-right"
+
+                OneLineAvatarIconListItem:
+                    text: "A propos de nous"
+                    IconLeftWidget:
+                        icon: "email"
+                    IconRightWidget:
+                        icon: "chevron-right"
+                OneLineAvatarIconListItem:
+                    text: "Déconnexion"
+                    on_release: root.deconnexion()
+                    IconLeftWidget:
+                        icon: "logout"
+                    IconRightWidget:
+                        icon: "chevron-right"
+
+        MDBoxLayout:
+            size_hint_y:.1
+            pos_hint:{"bottom":1}
+            md_bg_color:'white'
+            radius:[10,10,0,0]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    icon:"home"
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                    on_release:
+                        root.manager.transition.direction = "up"
+                        root.manager.current = "accueil admin"
+                MDLabel:
+                    text:"Accueil"
+                    valign:'center'
+                    halign:"center"
+
+
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    icon:"account"
+                    theme_icon_color:'Custom'
+                    icon_color:'blue'
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = "profile admin"
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                MDLabel:
+                    text:"Profile"
+                    valign:'center'
+                    color:'blue'
+                    halign:"center"
+

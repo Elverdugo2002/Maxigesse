@@ -1,0 +1,59 @@
+Login
+<Login>:
+    name: 'connexion'
+    MDFloatLayout:
+        MDLabel:
+            text: "Connexion"
+            pos_hint: {'center_x': .5, 'center_y': .85}
+            halign: 'center'
+            font_size: '40sp'
+            color: (1, 0.5, 0)  # Orange clair
+            italic: True
+            bold: True
+
+        MDTextField:
+            id: phone
+            hint_text: "Votre Email"
+            pos_hint: {"center_x": .5, "center_y": .55}
+            size_hint_x: .7
+            md_text_color:"red"
+            icon_right: "email"
+            mode: "rectangle"  # Style rectangle
+            line_color_focus: (0, 0.7, 0.8, 1)  # Couleur bleu clair au focus
+            line_color_normal: (0.8, 0.8, 0.8, 1)  # Couleur normal gris clair
+
+        MDTextField:
+            id: passe
+            hint_text: "Votre mot de passe"
+            pos_hint: {"center_x": .5, "center_y": .45}
+            size_hint_x: .7
+            icon_right: "key"
+            password: True  # Masquer le mot de passe
+            mode: "rectangle"  # Style rectangle
+            line_color_focus: (0, 0.7, 0.8, 1)  # Même couleur de focus
+            line_color_normal: (0.8, 0.8, 0.8, 1)  # Même couleur normale
+
+        MDRaisedButton:
+            text: "Se connexion"
+            size_hint_x: .7
+            elevation: 3
+            md_bg_color: "yellow"  # Couleur turquoise pour le bouton
+            text_color: "black"  # Texte blanc
+            font_style: "H6"
+            pos_hint: {"center_x": .5, "center_y": .25}
+            on_press:
+                root.validate_user()
+
+        MDIconButton:
+            icon: 'chevron-left'
+            pos_hint: {"center_x": .1, "center_y": .95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "home"
+
+        MDLabel:
+            text: "Retour"
+            pos_hint: {"center_x": .38, "center_y": .95}
+            color: (1, 0.5, 0)  # Couleur orange clair pour le texte
+            size_hint:.5,.5
+            font_size: '22sp'

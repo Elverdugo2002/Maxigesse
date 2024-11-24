@@ -1,0 +1,120 @@
+Compte_admin
+<Compte_admin>:
+    name: 'compte admin'
+    MDFloatLayout:
+        Image:
+            source:"image/image login.jpg"
+            pos_hint:{"center_x":.5,"center_y":.5}
+            size_hint:5,5
+            #width:"700 dp"
+            #height:"700 dp"
+        Image:
+            source:"image/logo dark.png"
+            pos_hint:{"center_x":.5,"center_y":.8}
+            #size_hint:5,5
+            #width:"700 dp"
+            #height:"700 dp"
+
+        MDLabel:
+            text: "Changer son Profile"
+            pos_hint: {'center_x': .5, 'center_y': .92}
+            halign: 'center'
+            font_size: '30dp'
+            color: (1, 0.5, 0)
+            italic: True
+            bold: True
+
+        MDTextField:
+            id: nom
+            hint_text: "Votre Nom "
+            icon_right: "account"
+            size_hint_x: .7
+            hint_text_color_normal: 1, 1, 1, 1  # Texte du hint en blanc
+            text_color_normal: 'yellow'  # Texte du hint en blanc
+            icon_right_color_normal: 1, 1, 1, 1  # Couleur de l'icône en blanc
+            line_color_focus: "black"  # Même couleur de focus
+            line_color_normal: (0.8, 0.8, 0.8, 1)  # Même couleur normale
+            pos_hint:{"center_x":.5,"center_y":.6}
+        MDTextField:
+            id: email
+            hint_text: "Votre Email"
+            icon_right: "email"
+            size_hint_x: .7
+            hint_text_color_normal: 1, 1, 1, 1  # Texte du hint en blanc
+            text_color_normal: 'yellow'  # Texte du hint en blanc
+            icon_right_color_normal: 1, 1, 1, 1  # Couleur de l'icône en blanc
+            line_color_focus: 'black'  # Focus color
+            line_color_normal: "white" # Normal color
+            pos_hint:{"center_x":.5,"center_y":.5}
+
+        MDTextField:
+            id: phone
+            hint_text: "N°Téléphone"
+            icon_right: "phone"
+            size_hint_x: .7
+            hint_text_color_normal: 1, 1, 1, 1  # Texte du hint en blanc
+            text_color_normal: 'yellow'  # Texte du hint en blanc
+            icon_right_color_normal: 1, 1, 1, 1  # Couleur de l'icône en blanc
+            line_color_focus: 'black'  # Focus color
+            line_color_normal: "white" # Normal color
+            pos_hint:{"center_x":.5,"center_y":.4}
+            readonly:True
+        MDTextField:
+            id: adresse
+            hint_text: "Votre Adresse"
+            icon_right: "map-marker"
+            size_hint_x: .7
+            hint_text_color_normal: 1, 1, 1, 1  # Texte du hint en blanc
+            text_color_normal: 'yellow'  # Texte du hint en blanc
+            icon_right_color_normal: 1, 1, 1, 1  # Couleur de l'icône en blanc
+            line_color_focus: 'black'  # Focus color
+            line_color_normal: "white" # Normal color
+            pos_hint:{"center_x":.5,"center_y":.3}
+        MDTextField:
+            id: sexe
+            hint_text: "Votre Sexe"
+            icon_right: "gender-male-female"
+            size_hint_x: .7
+            hint_text_color_normal: 1, 1, 1, 1  # Texte du hint en blanc
+            text_color_normal: 'yellow'  # Texte du hint en blanc
+            icon_right_color_normal: 1, 1, 1, 1  # Couleur de l'icône en blanc
+            line_color_focus: 'black'  # Focus color
+            line_color_normal: "white" # Normal color
+            pos_hint:{"center_x":.5,"center_y":.2}
+            on_focus: if self.focus: root.show_menu_genre()
+
+        MDIconButton:
+            icon: 'chevron-left'
+            theme_icon_color:'Custom'
+            icon_color:'white'
+            pos_hint: {"center_x": 0.1, "center_y": 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "profile admin"
+
+    MDFloatLayout:
+        size_hint:.7,.2
+        pos_hint:{"center_x":.5,'center_y':.1}
+        MDRaisedButton:
+            text: "Valider"
+            size_hint_x:.9
+            pos_hint:{"center_x":.5,'center_y':.2}
+            font_size:"22sp"
+            elevation: 3
+            font_style: "H6"
+            md_bg_color: "yellow"  # Couleur turquoise pour le bouton
+            text_color: "black"  # Texte blanc
+            bold:True
+            on_release:
+                root.change_profile_user()
+
+
+
+
+
+
+
+
+
+
+
