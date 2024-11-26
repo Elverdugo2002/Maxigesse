@@ -3876,21 +3876,21 @@ class MainApp(MDApp):
 
         # =====================================Gestion Client===================================
 
-        ecran.add_widget(Builder.load_file("admin/Client/Gestion client.kv"))
-        ecran.add_widget(Builder.load_file("admin/Client/bloquer client.kv"))
-        ecran.add_widget(Builder.load_file("admin/Client/debloquer client.kv"))
+        ecran.add_widget(Builder.load_file("admin/Gestion client.kv"))
+        ecran.add_widget(Builder.load_file("admin/bloquer client.kv"))
+        ecran.add_widget(Builder.load_file("admin/debloquer client.kv"))
         # =====================================Gestion societe===================================
-        ecran.add_widget(Builder.load_file("admin/societe/gestion societe.kv"))
-        ecran.add_widget(Builder.load_file("admin/societe/ajouter societer.kv"))
+        ecran.add_widget(Builder.load_file("admin/gestion societe.kv"))
+        ecran.add_widget(Builder.load_file("admin/ajouter societer.kv"))
         #=====================================Gestion facture===================================
-        ecran.add_widget(Builder.load_file("admin/facture/gestion facture.kv"))
-        ecran.add_widget(Builder.load_file("admin/facture/type facture.kv"))
-        ecran.add_widget(Builder.load_file("admin/facture/ajouter facture.kv"))
-        ecran.add_widget(Builder.load_file("admin/facture/ajouter facture priver.kv"))
+        ecran.add_widget(Builder.load_file("admin/gestion facture.kv"))
+        ecran.add_widget(Builder.load_file("admin/type facture.kv"))
+        ecran.add_widget(Builder.load_file("admin/ajouter facture.kv"))
+        ecran.add_widget(Builder.load_file("admin/ajouter facture priver.kv"))
 
         #=====================================Gestion paiement===================================
-        ecran.add_widget(Builder.load_file("admin/paiement/gestion paiement.kv"))
-        ecran.add_widget(Builder.load_file("admin/paiement/ajouter paiement.kv"))
+        ecran.add_widget(Builder.load_file("admin/gestion paiement.kv"))
+        ecran.add_widget(Builder.load_file("admin/ajouter paiement.kv"))
 
         #=============================Client============================================================================
 
