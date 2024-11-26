@@ -13,10 +13,10 @@ package.domain = ouchentech
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf,db
+source.include_exts = py,png,jpg,kv,atlas,ttf,db,pdf
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = image/*.pdf,image/*.jpg,image/.png,admin/*.kv,admin/Client/*.kv,admin/facture/*.kv,admin/paiement/*.kv,admin/societe/*.kv,client/*.kv,Font/*.ttf
+source.include_patterns = image/*.pdf,image/*.jpg,image/.png,admin/*.kv,client/*.kv,Font/*.ttf
 
 
 # (list) Source files to exclude (let empty to not exclude anything)
