@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Verdugo
+title = Ve
 
 # (str) Package name
 package.name = Ver
